@@ -1,18 +1,109 @@
+<script setup>
+import { ref } from 'vue';
+
+// Array of navigation links for the dashboard cards
+const adminLinks = ref([
+  {
+    title: 'Academic Year',
+    description: 'Manage academic calendars and sessions',
+    icon: 'mdi-calendar-range',
+    path: '/admin/academic-year',
+  },
+  {
+    title: 'Companies',
+    description: 'View and manage partner companies',
+    icon: 'mdi-domain',
+    path: '/admin/companies',
+  },
+  {
+    title: 'MOU Status',
+    description: 'Define MOU lifecycle statuses',
+    icon: 'mdi-list-status',
+    path: '/admin/mou-status',
+  },
+  {
+    title: 'MOU Type',
+    description: 'Manage different types of MOUs',
+    icon: 'mdi-file-document-multiple-outline',
+    path: '/admin/mou-type',
+  },
+   {
+    title: 'Event Type',
+    description: 'Manage different types of events',
+    icon: 'mdi-party-popper',
+    path: '/admin/event-type',
+  },
+  {
+    title: 'Campus',
+    description: 'Manage university campus locations',
+    icon: 'mdi-school-outline',
+    path: '/admin/campus',
+  },
+  {
+    title: 'MOU Hierarchy',
+    description: 'Set up approval workflows and levels',
+    icon: 'mdi-sitemap-outline',
+    path: '/admin/mou-hierarchy',
+  },
+]);
+</script>
+
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-container fluid class="pa-6">
+    <v-row>
+      <v-col>
+        <h1 class="text-h4 font-weight-medium">Admin Dashboard</h1>
+        <p class="text-medium-emphasis">Select a module below to manage its settings.</p>
+      </v-col>
+    </v-row>
+
+    <v-divider class="my-4"></v-divider>
+
+    <v-row>
+      <v-col
+        v-for="item in adminLinks"
+        :key="item.title"
+        cols="12"
+        sm="6"
+        md="4"
+        lg="3"
+      >
+        <router-link :to="item.path" class="text-decoration-none">
+          <v-card
+            hover
+            class="dashboard-card"
+            elevation="2"
+            height="100%"
+          >
+            <v-card-item class="pa-4">
+              <div class="d-flex align-center">
+                <v-avatar color="primary" rounded="lg" size="50">
+                   <v-icon :icon="item.icon" size="30" color="white"></v-icon>
+                </v-avatar>
+                <div class="ml-4">
+                  <v-card-title class="font-weight-bold text-h6 pa-0">
+                    {{ item.title }}
+                  </v-card-title>
+                </div>
+              </div>
+              <v-card-text class="pa-0 mt-2">
+                {{ item.description }}
+              </v-card-text>
+            </v-card-item>
+          </v-card>
+        </router-link>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
-export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
+<style scoped>
+.dashboard-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
-</script>
+
+.dashboard-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+}
+</style>
