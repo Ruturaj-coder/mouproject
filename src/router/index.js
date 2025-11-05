@@ -10,12 +10,31 @@ import MouHierarchyView from '../views/Admin/MouHierarchyView.vue'
 import HomeView from '../views/HomeView.vue'
 import SpocView from '../views/Spoc/SpocView.vue'
 import MouManagement from '@/views/Spoc/MouManagement.vue'
+import MouEvents from '@/views/Spoc/MouEvent.vue'
+import AuthorityView from '@/views/Authority/AuthorityView.vue'
+import ApproveMou from '@/views/Authority/ApproveMou.vue'
+import MouReport from '@/views/Authority/MouReport.vue'
 
 const routes = [
   {
     path: '/admin/home',
     name: 'admin-home',
     component: AdminView
+  },
+  {
+    path: '/authority/home',
+    name: 'authority-home',
+    component: AuthorityView
+  },
+  {
+    path: '/authority/approve-mou',
+    name: 'authority-approve-mou',
+    component: ApproveMou
+  },
+  {
+    path: '/authority/mou-report',
+    name: 'authority-mou-report',
+    component: MouReport
   },
   {
     path: '/spoc/home',
@@ -26,6 +45,11 @@ const routes = [
     path: '/spoc/add-mou',
     name: 'spoc-add-mou',
     component: MouManagement
+  },
+  {
+    path: '/spoc/mou-events',
+    name: 'spoc-mou-events',
+    component: MouEvents
   },
   {
     path: '/',

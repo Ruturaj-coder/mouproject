@@ -4,16 +4,16 @@ import { ref } from 'vue';
 // Array of navigation links for the dashboard cards
 const adminLinks = ref([
   {
-    title: 'Add MOU',
-    description: 'Manage academic calendars and sessions',
-    icon: 'mdi-calendar-range',
-    path: '/spoc/add-mou',
+    title: 'Approve MOU',
+    description: 'Review and approve pending MOUs',
+    icon: 'mdi-file-check',
+    path: '/authority/approve-mou',
   },
   {
-    title: 'MOU Events',
-    description: 'Organize and track MOU-related events',
-    icon: 'mdi-calendar-check',
-    path: '/spoc/mou-events',
+    title: 'MOU Report',
+    description: 'Generate and view MOU reports',
+    icon: 'mdi-file-chart',
+    path: '/authority/mou-report',
   },
 ]);
 </script>
@@ -22,7 +22,7 @@ const adminLinks = ref([
   <v-container fluid class="pa-6">
     <v-row>
       <v-col>
-        <h1 class="text-h4 font-weight-medium">SPOC Dashboard</h1>
+        <h1 class="text-h4 font-weight-medium">Authority Dashboard</h1>
         <p class="text-medium-emphasis">Select a module below to manage its settings.</p>
       </v-col>
     </v-row>

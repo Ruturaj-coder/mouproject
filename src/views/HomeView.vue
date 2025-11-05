@@ -5,21 +5,21 @@ import { ref } from 'vue';
 const adminLinks = ref([
   {
     title: 'Admin',
-    description: 'Manage academic calendars and sessions',
-    icon: 'mdi-calendar-range',
+    description: 'Manage system-wide settings and users',
+    icon: 'mdi-shield-account',
     path: '/admin/home',
   },
   {
     title: 'SPOC',
-    description: 'View and manage partner companies',
-    icon: 'mdi-domain',
+    description: 'Manage company partnerships and MOUs',
+    icon: 'mdi-account-tie',
     path: '/spoc/home',
   },
   {
     title: 'Authority',
-    description: 'Define MOU lifecycle statuses',
-    icon: 'mdi-list-status',
-    path: '/admin/mou-status',
+    description: 'Track MOU statuses and reports',
+    icon: 'mdi-gavel',
+    path: '/authority/home',
   },
 ]);
 </script>
