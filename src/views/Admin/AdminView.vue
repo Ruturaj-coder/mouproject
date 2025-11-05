@@ -4,22 +4,46 @@ import { ref } from 'vue';
 // Array of navigation links for the dashboard cards
 const adminLinks = ref([
   {
-    title: 'Admin',
+    title: 'Academic Year',
     description: 'Manage academic calendars and sessions',
     icon: 'mdi-calendar-range',
-    path: '/admin/home',
+    path: '/admin/academic-year',
   },
   {
-    title: 'SPOC',
+    title: 'Companies',
     description: 'View and manage partner companies',
     icon: 'mdi-domain',
-    path: '/spoc/home',
+    path: '/admin/companies',
   },
   {
-    title: 'Authority',
+    title: 'MOU Status',
     description: 'Define MOU lifecycle statuses',
     icon: 'mdi-list-status',
     path: '/admin/mou-status',
+  },
+  {
+    title: 'MOU Type',
+    description: 'Manage different types of MOUs',
+    icon: 'mdi-file-document-multiple-outline',
+    path: '/admin/mou-type',
+  },
+   {
+    title: 'Event Type',
+    description: 'Manage different types of events',
+    icon: 'mdi-party-popper',
+    path: '/admin/event-type',
+  },
+  {
+    title: 'Campus',
+    description: 'Manage university campus locations',
+    icon: 'mdi-school-outline',
+    path: '/admin/campus',
+  },
+  {
+    title: 'MOU Hierarchy',
+    description: 'Set up approval workflows and levels',
+    icon: 'mdi-sitemap-outline',
+    path: '/admin/mou-hierarchy',
   },
 ]);
 </script>
@@ -28,7 +52,7 @@ const adminLinks = ref([
   <v-container fluid class="pa-6">
     <v-row>
       <v-col>
-        <h1 class="text-h4 font-weight-medium">Welcome Dashboard</h1>
+        <h1 class="text-h4 font-weight-medium">Admin Dashboard</h1>
         <p class="text-medium-emphasis">Select a module below to manage its settings.</p>
       </v-col>
     </v-row>

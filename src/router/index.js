@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import AdminView from '../views/Admin/AdminView.vue'
 import AcademicYearView from '../views/Admin/AcademicYearView.vue' 
 import CompanyView from '../views/Admin/CompanyView.vue'
 import MOUStatusView from '../views/Admin/MOUStatusView.vue'
@@ -7,8 +7,26 @@ import MOUTypeView from '../views/Admin/MOUTypeView.vue'
 import EventTypeView from '../views/Admin/EventTypeView.vue'
 import CampusView from '../views/Admin/CampusView.vue'
 import MouHierarchyView from '../views/Admin/MouHierarchyView.vue'
+import HomeView from '../views/HomeView.vue'
+import SpocView from '../views/Spoc/SpocView.vue'
+import MouManagement from '@/views/Spoc/MouManagement.vue'
 
 const routes = [
+  {
+    path: '/admin/home',
+    name: 'admin-home',
+    component: AdminView
+  },
+  {
+    path: '/spoc/home',
+    name: 'spoc-home',
+    component: SpocView
+  },
+  {
+    path: '/spoc/add-mou',
+    name: 'spoc-add-mou',
+    component: MouManagement
+  },
   {
     path: '/',
     name: 'home',
